@@ -91,7 +91,9 @@ Para manejar los mismos estandares de formato es recomendado instalar los siguie
 
 ##### JSHint
 []()
-Esta herramienta es necesaria para evitar errores potenciales en el código.
+[JSHint](http://jshint.com/) es una herramienta necesaria para evitar errores potenciales en el código.
 ```bash
 npm install -g jshint
 ```
+en el root folder vamos a tener el siguiente archivo [.jshintrc](https://gist.github.com/bitsjohanmendez/780e50dc598a17786733bb962bf5745c) donde tendremos las [configurciones](http://jshint.com/docs/options/) base recomendadas
+TODO: correr el lint con gulp al momento de hacer commit
