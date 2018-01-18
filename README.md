@@ -20,7 +20,6 @@ Este manual esta dirigido para ser utilizado en el proceso de desarrollo como ta
 El soporte mínimo ofrecido es Internet Explorer 9. Aunque Microsoft ya no este dando soporte a este. Por esa razón ciertas propiedades de css no se pueden utilizar en el desarrollo:
 
 *   outline
-*   inherit
 *   initial
 *   flex :'(
 *   text-shadow
@@ -32,6 +31,7 @@ El soporte mínimo ofrecido es Internet Explorer 9. Aunque Microsoft ya no este 
 *   animation
 *   border-image
 *   gradients
+*   max-content, min-content, fit-content
 
 Más información en el [soporte oficial de Microsoft](https://msdn.microsoft.com/en-us/library/hh781508%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396)
 
@@ -125,7 +125,7 @@ Los archivos son organizados según su extensión o patrón de comportamiento.
 ```markdown
     │── dist  // Archivo generado por gulp para producción (no modificar)
     │── src
-    │   │── admin   // Código para el administrador de drupal
+    │   │── admin   // Código para el administrador de Drupal
     │   │   │── js
     │   │   └── scss
     │   │── core
@@ -172,14 +172,14 @@ Evitar definir funciones y variables en español, ya que el código tiene un len
 Al instalar una librería de npm, en los `packages.json` es recomendable quitar los prefijos `^` de las versiones de las librerías para evitar errores de versionamiento o compatibilidad con otras librerías de npm.
 
 #### Uso de nombres de archivos en minúsculas
-Los servidores pueden tener conflictos de *case sensitive* pueden haber errores en producción, Para evitar esto se recomienda siempre nombrar archivos en minúsculas.
+Los servidores pueden tener conflictos de *case sensitive* y generar errores en producción, Para evitar esto se recomienda siempre nombrar archivos en minúsculas y sin espacios, para separar se puede utiizar el caracter `-` o `_`.
 
 <a id="html"></a>
 ### HTML [&#8679;](#menu)
 
 #### Indentación y saltos de linea
 *   Indentar correctamente y los saltos de línea Ayudan a que el código sea más legible y escalable para evitar errores de cierre de tags y sintaxis.
-*   Indentar a 2 espacios es recomendado para que el código no quede muy extenso sin embargo sigue siendo una preferencia personal, lo importante es que siempre sea un tabulado y no espaciado. También es una recomendación oical de Drupal.
+*   Indentar a 2 espacios es recomendado para que el código no quede muy extenso sin embargo sigue siendo una preferencia personal, lo importante es que siempre sea un tabulado y no espaciado.
 *   Saltos de línea o line wraps a 80 columnas es el estándar para ofrecer mayor legibilidad en el código, es utilizado en la mayoría de los lenguajes.
 
 #### Nombramiento de clases
@@ -193,6 +193,8 @@ Al nombrar clases se deben hacer con el contexto del componente o del módulo a 
 
 <a id="sass"></a>
 ### SASS [&#8679;](#menu)
+
+[SASS](http://sass-lang.com/) es el pre-procesador de *css* más completo y con mayor comunidad. La sintaxis utilizda es la de [SCSS](http://compass-style.org/)
 #### Manejo de mixins, silent classes y helpers
 Estas se pueden separar en funcionlidades individuales para poder ser reusados en todo el proyecto, cada elemento debe tener solo una responsabilidad para mantener el principio del css modular de [css orientado a objetos](https://www.keycdn.com/blog/oocss/).
 
@@ -236,12 +238,13 @@ Se recomienda los siguientes consejos:
 *   Para booleanos tener un prefijo de *is*, ejemplo:\
     `var isActive = false`
 *   Para funciones el nombre de la acción, ejemplo:\
-    `function getNumbers () {}`
+    `function getNumbers() {}`
 
 #### Usar atributos `data-`
 Usar el prefijo `data-` es recomendado para asociar datos a elementos de *html*, también pueden ser usados para añadir estilos dependiendo de cierto dato, si es necesario agregar una clase específica para añadir funcionalidad se recomienda poner un prefijo de `js-` a la clase con el fin de evitar confusiones sobre su objetivo si es de añadir estilos o añadir funcionalidad.
 > Ejemplos de uso [acá](https://www.sitepoint.com/how-why-use-html5-custom-data-attributes/)
 
+> También se recomienda seguir las recomendaciones de [Douglas Crockford](http://jslint.com/help.html) para tener buenas prácticas de Javascript
 
 <a id="images"></a>
 ### Manejo de imágenes [&#8679;](#menu)
