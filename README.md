@@ -125,7 +125,7 @@ Los archivos son organizados según su extensión o patrón de comportamiento.
 ```markdown
     │── dist  // Archivo generado por gulp para producción (no modificar)
     │── src
-    │   │── admin   // Código para el administrador de Drupal
+    │   │── admin  // Código para el administrador de Drupal
     │   │   │── js
     │   │   └── scss
     │   │── core
@@ -133,13 +133,13 @@ Los archivos son organizados según su extensión o patrón de comportamiento.
     │   │   │    │──utils   // Utilidades peqeñas para reutilizar en todo el desarrollo
     │   │   │    └──main.js // Código disponible para todas las páginas
     │   │   └── scss
-    │   │       │──base             // Archivos base quese utilizarán entodo el desarrollo
-    │   │       │──components       // Componentes individuales
-    │   │       │──_general.scss    // Estilos disponibles para todas las páginas
-    │   │       └──main.scss        // Archivo donde se llaman todos los archivos scss de forma síncrona
-    │   │── images
-    │   │── vendors     // Espacio para agregar librerías de terceros que serán utilizadas en todas las páginas
-    │── templates       // En esta carpeta se sobreescriben los .twigs del sistema
+    │   │       │──base           // Archivos base quese utilizarán entodo el desarrollo
+    │   │       │──components     // Componentes individuales
+    │   │       │──_general.scss  // Estilos disponibles para todas las páginas
+    │   │       └──main.scss      // Archivo donde se llaman todos los archivos scss de forma síncrona
+    │   └── images
+    │── vendors // Espacio para agregar librerías de terceros que serán utilizadas en todas las páginas
+    │── templates   // En esta carpeta se sobreescriben los .twigs del sistema
 ```
 
 #### Ejemplo de un modulo
@@ -155,11 +155,11 @@ Los archivos son organizados según su extensión o patrón de comportamiento.
     │   │   │── js
     │   │   │    └──main.js  // Código disponible este módulo
     │   │   └── scss
-    │   │       │──_mi_modulo.scss   // Estilos disponibles para este modulo
-    │   │       └──main.scss         // Archivo donde se llaman todos los archivos scssdel módulo
-    │   │── images
-    │   │── vendors     // Espacio para agregar librerías de terceros que serán utilizadas solo en este módulo
-    │── templates       // En esta carpeta se tenemos los .twigs del módulo
+    │   │       │──_mi_modulo.scss  // Estilos disponibles para este modulo
+    │   │       └──main.scss        // Archivo donde se llaman todos los archivos scssdel módulo
+    │   └── images
+    │── vendors    // Espacio para agregar librerías de terceros que serán utilizadas solo en este módulo
+    │── templates  // En esta carpeta se tenemos los .twigs del módulo
 ```
 
 
@@ -219,7 +219,7 @@ Utilizar `@include` duplica código y crea archivos compilados extensos sin emba
 #### Selectores de tag
 Los selectores de *tag* no son confiables una pues si en algún momento el *html* cambia es necesario una restructuración del *css* también. Como también la necesidad de un *super-selector* y así aumentar de forma innecesaria el código.
 
-#### Uso de !important
+#### Uso de `!important`
 Esta es una práctica que debe eliminarse, en el momento que se debe usar es una señal de que algo está mal en los estilos y es necesario revisar. Una forma de evitar el uso es con el uso de *super-selectores* los cuales son selectores largos de varias jerarquías, lo cual es también una mala práctica (no tan mala como !important) pues lo ideal es no tener más de 3 jerarquías de selectores, esto es propuesto por [SMACSS](https://smacss.com/) la cual es una lista de metodologías que propone mejorar la arquitectura de proyectos.
 
 #### Transiciones
